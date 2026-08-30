@@ -18,6 +18,9 @@ function user_job_setup()
 	--gear.wsd_jse_back = {name="Rosmerta's Cape",augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 	--gear.nuke_jse_back = {name="Rosmerta's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}}
 
+	-- adding some text to test the gitfiend update thingamabob
+
+
 	autows = 'Expiacion'
 
 	-- Additional local binds
