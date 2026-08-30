@@ -1,0 +1,17 @@
+sets.exported = {
+    main="Excalibur",
+    sub="Duban",
+    ammo="Staunch Tathlum +1",
+    head={ name="Yorium Barbuta", augments={'Phalanx +3',}},
+    body="Chev. Cuirass +3",
+    hands="Chev. Gauntlets +3",
+    legs="Carmine Cuisses +1",
+    feet="Chev. Sabatons +3",
+    neck="Null Loop",
+    waist="Orpheus's Sash",
+    left_ear="Tuisto Earring",
+    right_ear={ name="Chev. Earring +2", augments={'System: 1 ID: 1676 Val: 0','Accuracy+16','Mag. Acc.+16','Damage taken-6%','STR+7 VIT+7',}},
+    left_ring="Stikini Ring +1",
+    right_ring="Stikini Ring +1",
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','VIT+10','Enmity+10','DEF+50',}},
+}

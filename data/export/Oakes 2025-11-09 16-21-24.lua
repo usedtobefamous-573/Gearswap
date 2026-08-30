@@ -1,0 +1,17 @@
+sets.exported = {
+    main="Naegling",
+    sub="Machaera +2",
+    ammo="Homiliary",
+    head="Malignance Chapeau",
+    body="Malignance Tabard",
+    hands="Nyame Gauntlets",
+    legs="Malignance Tights",
+    feet="Nyame Sollerets",
+    neck="Marked Gorget",
+    waist="Eschan Stone",
+    left_ear="Telos Earring",
+    right_ear="Crep. Earring",
+    left_ring="Cacoethic Ring",
+    right_ring="Karieyh Ring",
+    back="Sokolski Mantle",
+}

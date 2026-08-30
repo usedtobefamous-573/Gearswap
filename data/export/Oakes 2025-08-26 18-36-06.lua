@@ -1,0 +1,18 @@
+sets.exported={
+    main="Naegling",
+    sub="Gleti's Knife",
+    range={ name="Holliday", augments={'"Mag.Atk.Bns."+18','STR+6','Rng.Acc.+10','Rng.Atk.+5',}},
+    ammo="Eminent Bullet",
+    head="Malignance Chapeau",
+    body="Malignance Tabard",
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Desultor Tassets", augments={'"Phantom Roll" ability delay -5','"Waltz" TP cost -5',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck="Loricate Torque",
+    waist="Reiki Yotai",
+    left_ear="Odnowa Earring +1",
+    right_ear="Eabani Earring",
+    left_ring="Defending Ring",
+    right_ring="Gelatinous Ring",
+    back={ name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}},
+}

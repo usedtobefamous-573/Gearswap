@@ -1,0 +1,16 @@
+sets.exported = {
+    main={ name="Nibiru Cudgel", augments={'MP+50','INT+10','"Mag.Atk.Bns."+15',}},
+    sub={ name="Nibiru Cudgel", augments={'MP+50','INT+10','"Mag.Atk.Bns."+15',}},
+    head="Hashishin Kavuk +2",
+    body="Hashishin Mintan +2",
+    hands="Hashi. Bazu. +2",
+    legs={ name="Lengo Pants", augments={'INT+9','Mag. Acc.+15','"Mag.Atk.Bns."+14',}},
+    feet="Hashi. Basmak +1",
+    neck="Sibyl Scarf",
+    waist="Eschan Stone",
+    left_ear="Friomisi Earring",
+    right_ear="Hecate's Earring",
+    left_ring="Strendu Ring",
+    right_ring="Acumen Ring",
+    back="Cornflower Cape",
+}
