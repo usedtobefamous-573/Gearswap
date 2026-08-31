@@ -18,8 +18,10 @@ function user_job_setup()
 	--gear.wsd_jse_back = {name="Rosmerta's Cape",augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 	--gear.nuke_jse_back = {name="Rosmerta's Cape",augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','"Mag.Atk.Bns."+10',}}
 
-	-- adding some text to test the gitfiend update thingamabob
-
+	RandomLockstyleGenerator = 'true'
+	-- List of Equipment Sets created for Random Lockstyle Generator
+	-- (If you want to have the same Lockstyle every time, reduce the list to a single Equipset #)
+	random_lockstyle_list = {21,22,23}
 
 	autows = 'Expiacion'
 
@@ -41,6 +43,17 @@ function user_job_setup()
 	send_command('bind !q gs c weapons HybridWeapons;gs c update')
 
 	select_default_macro_book()
+
+	-- Random Lockstyle generator.
+
+	if RandomLockstyleGenerator == 'true' then
+
+	local randomLockstyle = random_lockstyle_list[math.random(1, #random_lockstyle_list)]
+
+	send_command('@wait 5;input /lockstyleset '.. randomLockstyle)
+
+	end
+
 end
 
 function init_gear_sets()
@@ -63,8 +76,8 @@ empy = {}
     empy.Head = "Hashishin Kavuk +2"
     empy.Body = "Hashishin Mintan +2"
     empy.Hands = "Hashi. Bazu. +2"
-    empy.Legs = "Hashishin Tayt +1"
-    empy.Feet = "Hashi. Basmak +1"
+    empy.Legs = "Hashishin Tayt +2"
+    empy.Feet = "Hashi. Basmak +2"
 
 	--------------------------------------
 	-- Start defining the sets
@@ -301,7 +314,7 @@ empy = {}
 		head=empy.Head,
 		body=empy.Body,
 		hands=empy.Hands,
-		legs={ name="Lengo Pants", augments={'INT+9','Mag. Acc.+15','"Mag.Atk.Bns."+14',}},
+		legs=empy.Legs,
 		feet=empy.Feet,
 		neck="Sibyl Scarf",
 		waist="Eschan Stone",
@@ -309,7 +322,7 @@ empy = {}
 		right_ear="Hecate's Earring",
 		left_ring="Strendu Ring",
 		right_ring="Acumen Ring",
-		back="Cornflower Cape",
+		back={ name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10',}},
 	}
 		 
 	sets.midcast['Blue Magic'].Magical.SIRD = {main="Bunzi's Rod",sub="Sakpata's Sword",ammo="Staunch Tathlum +1",
@@ -323,7 +336,7 @@ empy = {}
 		head=empy.Head,
 		body=empy.Body,
 		hands=empy.Hands,
-		legs={ name="Lengo Pants", augments={'INT+9','Mag. Acc.+15','"Mag.Atk.Bns."+14',}},
+		legs=empy.Legs,
 		feet=empy.Feet,
 		neck="Sibyl Scarf",
 		waist="Eschan Stone",
@@ -331,7 +344,7 @@ empy = {}
 		right_ear="Hecate's Earring",
 		left_ring="Strendu Ring",
 		right_ring="Acumen Ring",
-		back="Cornflower Cape",
+		back={ name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10',}},
 	}
 	sets.midcast['Blue Magic'].Magical.Proc = {ammo="Hasty Pinion +1",
 		head="Carmine Mask +1",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
@@ -343,7 +356,7 @@ empy = {}
 
 	sets.midcast['Blue Magic'].Magical.Fodder = {main="Bunzi's Rod",sub="Maxentius",ammo="Pemphredo Tathlum",
 		 head="Jhakri Coronal +2",neck="Baetyl Pendant",ear1="Regal Earring",ear2="Friomisi Earring",
-		 body="Amalric Doublet +1",hands="Amalric Gages +1",ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
+		 body="Amalric Doublet +1",legs="Nyame Flanchard",ring1="Metamor. Ring +1",ring2="Shiva Ring +1",
 		 back=gear.ElementalCape,waist=gear.ElementalObi,legs="Luhlaza Shalwar +3",feet="Amalric Nails +1"}
 
 	sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, {ring2="Stikini Ring +1"})
@@ -374,7 +387,15 @@ empy = {}
 		body="Telchine Chas.",hands="Telchine Gloves",ring1="Stikini Ring +1",ring2="Stikini Ring +1",
 		back="Perimede Cape",waist="Olympus Sash",legs="Telchine Braconi",feet="Telchine Pigaches"}
 		
-	sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'],{main="Pukulatmuj +1",sub="Sakpata's Sword",head="Carmine Mask +1",ear2="Mimir Earring",body=gear.taeon_phalanx_body,hands=gear.herculean_phalanx_hands,legs="Carmine Cuisses +1",feet=gear.herculean_nuke_feet})
+	sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'],{
+		--main="Pukulatmuj +1",
+		--sub="Sakpata's Sword",
+		head={ name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}},
+		body={ name="Taeon Tabard", augments={'"Triple Atk."+1','Phalanx +3',}},
+		hands={ name="Taeon Gloves", augments={'Phalanx +3',}},
+		legs={ name="Taeon Tights", augments={'Phalanx +3',}},
+		feet={ name="Taeon Boots", augments={'Phalanx +3',}},
+	})
 
 	sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], {head="Amalric Coif +1"})
 
@@ -501,35 +522,40 @@ empy = {}
 				  --main="Bolelabunga",
 				  --sub="Genmei Shield",
 				  --ammo="Staunch Tathlum +1",
-				  ammo="Ginsen",
+				  --ammo="Ginsen",
 			      --head="Rawhide Mask",
-				  head="Hashishin kavuk +2",
+				--  head="Hashishin kavuk +2",
 				  --neck="Loricate Torque +1",
-				  neck="Warder's Charm +1",
+				  --neck="Warder's Charm +1",
 				  --ear1="Etiolation Earring", 
 				  --ear2="Ethereal Earring",
-				  ear1="Brutal Earring",
-				  ear2="Hashishin Earring +1",
-			      body="Hashishin mintan +2",
+				--  ear1="Brutal Earring",
+				--  ear2="Hashishin Earring +1",
+			    --  body="Hashishin mintan +2",
 				  --hands=gear.herculean_refresh_hands,
-				  hands="Luhlaza bazubands +2",
-				  ring1="Defending Ring",
+				--  hands="Luhlaza bazubands +2",
+				--  ring1="Defending Ring",
 				  --ring2="Murky Ring",
-				  ring2="Dark Ring",
-			      back="Cornflower Cape",
+				 -- ring2="Dark Ring",
+			     -- back="Cornflower Cape",
 				  --waist="Flume Belt +1",
-				  waist="Eschan Stone",
-				  legs="Luhlaza shalwar +1",
+				--  waist="Eschan Stone",
+				--  legs="Luhlaza shalwar +1",
 				  --feet=gear.herculean_refresh_feet
-				  feet="Luhlaza charuqs +2"
+				--  feet="Luhlaza charuqs +2"
 				  }
 
 	sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})
 
-	sets.idle.PDT = {main="Sakpata's Sword",sub="Genmei Shield",ammo="Staunch Tathlum +1",
-				head="Nyame Helm",neck="Loricate Torque +1",ear1="Etiolation Earring", ear2="Ethereal Earring",
-		        body="Jhakri Robe +2",hands="Nyame Gauntlets",ring1="Defending Ring",ring2="Dark Ring",
-				back="Moonlight Cape",waist="Flume Belt +1",legs="Nyame Flanchard",feet="Nyame Sollerets"}
+	sets.idle.PDT = {
+				head="Nyame Helm",
+				neck="Twilight Torque",
+		        body=empy.Body,
+				hands="Nyame Gauntlets",
+				ring1="Defending Ring",
+				ring2={ name="Dark Ring", augments={'Phys. dmg. taken -6%','Magic dmg. taken -5%','Spell interruption rate down -3%',}},
+				legs="Carmine Cuisses +1",
+				feet="Nyame Sollerets"}
 
 	sets.idle.DTHippo = set_combine(sets.idle.PDT, {legs="Carmine Cuisses +1",feet="Hippo. Socks +1"})
 
@@ -874,3 +900,26 @@ end
 
 autows_list = {['Tizbron']='Expiacion',['Tizalmace']='Expiacion',['Almace']='Chant Du Cygne',['MeleeClubs']='Realmrazer',
      ['HybridWeapons']='Sanguine Blade',['Naegbron']='Savage Blade',['Naegmace']='Savage Blade'}
+
+     -- Global toggles for the automation feature
+auto_ws_active = false
+target_weapon_skill = "Seraph Blade" -- Change this to your preferred weapon skill
+
+-- Command handler to turn it on/off via the chat box
+function self_command(command)
+    if command:lower() == 'toggle autows' then
+        auto_ws_active = not auto_ws_active
+        windower.add_to_chat(122, '--- Auto Weaponskill is now ' .. (auto_ws_active and 'ON' or 'OFF') .. ' ---')
+    end
+end
+
+-- Event listener that triggers every time your TP updates
+windower.register_event('tp change', function(new_tp, old_tp)
+    -- Check if feature is on, character is engaged in combat, and not afflicted with amnesia
+    if auto_ws_active and player.status == 'Engaged' and not buffactive['amnesia'] then
+        -- Execute the weapon skill as soon as you hit 1000 TP or higher
+        if new_tp >= 1000 then
+            windower.send_command('input /ws "' .. target_weapon_skill .. '" <t>')
+        end
+    end
+end)
