@@ -430,7 +430,7 @@ end
 
 -- Modify the default melee set after it was constructed.
 function job_customize_melee_set(meleeSet)
-	if state.LearningMode.value == true then 
+	if state.LearningMode.value == true then
 		meleeSet = set_combine(meleeSet, sets.Learning)
 	end
 

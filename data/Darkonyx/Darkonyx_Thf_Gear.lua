@@ -54,7 +54,7 @@ function init_gear_sets()
 	sets.Suppa = {ear1="Suppanomimi", ear2="Sherida Earring"}
 	sets.DWEarrings = {ear1="Dudgeon Earring",ear2="Heartseeker Earring"}
 	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body="Adhemar Jacket +1",hands="Floral Gauntlets",waist="Reiki Yotai"}
-	sets.Parry = {hands="Turms Mittens +1",ring1="Defending Ring"}
+	sets.Parry = {hands="Turms Mittens +1"file:///home/deck/Games/final-fantasy-xi-online/drive_c/Windower4/addons/Gearswap/data/Darkonyx/Darkonyx_Blu_Gear.lua,ring1="Defending Ring"}
 	sets.Ambush = {} --body="Plunderer's Vest +1"
 	
 	-- Weapons sets

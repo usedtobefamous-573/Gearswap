@@ -309,7 +309,7 @@ empy = {}
 	-- Magical Spells --
 
 	sets.midcast['Blue Magic'].Magical = {
-		main={ name="Nibiru Cudgel", augments={'MP+50','INT+10','"Mag.Atk.Bns."+15',}},
+		main="Maxentius",
 		sub={ name="Nibiru Cudgel", augments={'MP+50','INT+10','"Mag.Atk.Bns."+15',}},
 		head=empy.Head,
 		body=empy.Body,
@@ -317,12 +317,13 @@ empy = {}
 		legs=empy.Legs,
 		feet=empy.Feet,
 		neck="Sibyl Scarf",
-		waist="Eschan Stone",
+		waist="Orpheus's Sash",
 		left_ear="Friomisi Earring",
 		right_ear="Hecate's Earring",
 		left_ring="Strendu Ring",
 		right_ring="Acumen Ring",
 		back={ name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10',}},
+		ammo="Ghastly Tathlum +1",
 	}
 		 
 	sets.midcast['Blue Magic'].Magical.SIRD = {main="Bunzi's Rod",sub="Sakpata's Sword",ammo="Staunch Tathlum +1",
@@ -331,7 +332,7 @@ empy = {}
 		 back=gear.nuke_jse_back,waist="Emphatikos Rope",legs="Carmine Cuisses +1",feet="Amalric Nails +1"}
 		 
 	sets.midcast['Blue Magic'].Subduction = {
-		main={ name="Nibiru Cudgel", augments={'MP+50','INT+10','"Mag.Atk.Bns."+15',}},
+		main="Maxentius",
 		sub={ name="Nibiru Cudgel", augments={'MP+50','INT+10','"Mag.Atk.Bns."+15',}},
 		head=empy.Head,
 		body=empy.Body,
@@ -339,12 +340,13 @@ empy = {}
 		legs=empy.Legs,
 		feet=empy.Feet,
 		neck="Sibyl Scarf",
-		waist="Eschan Stone",
+		waist="Orpheus's Sash",
 		left_ear="Friomisi Earring",
 		right_ear="Hecate's Earring",
 		left_ring="Strendu Ring",
 		right_ring="Acumen Ring",
 		back={ name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10',}},
+		ammo="Ghastly Tathlum +1",
 	}
 	sets.midcast['Blue Magic'].Magical.Proc = {ammo="Hasty Pinion +1",
 		head="Carmine Mask +1",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
@@ -543,6 +545,14 @@ empy = {}
 				--  legs="Luhlaza shalwar +1",
 				  --feet=gear.herculean_refresh_feet
 				--  feet="Luhlaza charuqs +2"
+				head="Nyame Helm",
+				neck="Twilight Torque",
+		        body=empy.Body,
+				hands="Nyame Gauntlets",
+				ring1="Defending Ring",
+				ring2={ name="Dark Ring", augments={'Phys. dmg. taken -6%','Magic dmg. taken -5%','Spell interruption rate down -3%',}},
+				legs="Carmine Cuisses +1",
+				feet="Nyame Sollerets"
 				  }
 
 	sets.idle.Sphere = set_combine(sets.idle, {body="Mekosu. Harness"})
@@ -555,7 +565,9 @@ empy = {}
 				ring1="Defending Ring",
 				ring2={ name="Dark Ring", augments={'Phys. dmg. taken -6%','Magic dmg. taken -5%','Spell interruption rate down -3%',}},
 				legs="Carmine Cuisses +1",
-				feet="Nyame Sollerets"}
+				feet="Nyame Sollerets"
+
+	}
 
 	sets.idle.DTHippo = set_combine(sets.idle.PDT, {legs="Carmine Cuisses +1",feet="Hippo. Socks +1"})
 
@@ -600,7 +612,7 @@ empy = {}
 
 	-- Engaged sets
 
-	sets.engaged = {main="Naegling",sub="Machaera",
+	sets.engaged = {main="Naegling",sub="Thibron",
 				ammo="Ginsen",
 			    head="Malignance Chapeau",
 				neck="Mirage Stole +1",
@@ -903,7 +915,7 @@ autows_list = {['Tizbron']='Expiacion',['Tizalmace']='Expiacion',['Almace']='Cha
 
      -- Global toggles for the automation feature
 auto_ws_active = false
-target_weapon_skill = "Seraph Blade" -- Change this to your preferred weapon skill
+target_weapon_skill = "Savage Blade" -- Change this to your preferred weapon skill
 
 -- Command handler to turn it on/off via the chat box
 function self_command(command)
