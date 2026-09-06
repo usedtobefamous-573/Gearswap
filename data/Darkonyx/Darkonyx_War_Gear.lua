@@ -199,10 +199,12 @@ function init_gear_sets()
 		neck = "War. Beads +1",
         hands =	empy.Hands,
         body = af.Body,
-		legs = empy.Legs, --replace w/ valorous hose , then w/ nyame
+		-- replace legs w/ nyame
+		legs={ name="Valorous Hose", augments={'Accuracy+25','Weapon skill damage +3%','VIT+9','Attack+12',}},
 		feet = "Sulevia's Leggings +2", -- replace w/ nyame
 		waist="Sailfi Belt +1",
 		left_ring="Cornelia's Ring",
+		right_ring="Karieyh Ring",
         --right_ring="Sroda Ring",
 		left_ear = "Thrud Earring",
         right_ear = "Moonshade Earring",
