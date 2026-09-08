@@ -42,7 +42,7 @@ end
 function init_gear_sets()
 	af = {}
 		af.Head = "Pumm. Mask +2"
-		af.Body = "Pumm. Lorica +2"
+		af.Body = "Pumm. Lorica +3"
 		af.Hands = "Pumm. Mufflers"
 		af.Legs = "Pumm. Cuisses"
 		af.Feet = "Pumm.  Calligae"
@@ -548,7 +548,22 @@ end
 	--------------------------------------
 
 
-
+-- Weapons sets
+	sets.weapons.Shining1 = { main = "Shining One", sub = "Utu Grip" }
+	sets.weapons.Naegling = { main = "Naegling", sub = "Blurred Shield +1" }
+	sets.weapons.Loxotic = { main = "Loxotic Mace +1", sub = "Blurred Shield +1" }
+	sets.weapons.Chango = { main = "Chango", sub = "Utu Grip" }
+	--sets.weapons.DualWeapons = { main = "Firangi", sub = "Reikiko" }
+	--sets.weapons.Greatsword = { main = "Montante +1", sub = "Utu Grip" }
+	sets.weapons.ProcDagger = { main = "Bronze dagger", sub = empty }
+	sets.weapons.ProcSword = { main = "Wax Sword", sub = empty }
+	sets.weapons.ProcKatana = { main = "Debahocho", sub = empty }
+	sets.weapons.ProcGreatSword = { main = "Claymore", sub = empty }
+	sets.weapons.ProcScythe = { main = "Bronze Zaghnal", sub = empty }
+	sets.weapons.ProcPolearm = { main = "Harpoon", sub = empty }
+	sets.weapons.ProcGreatKatana = { main = "Ethereal tachi", sub = empty }
+	sets.weapons.ProcClub = { main = "Bronze mace", sub = empty }
+	sets.weapons.ProcStaff = { main = "Ash Staff", sub = empty }
 
 
 

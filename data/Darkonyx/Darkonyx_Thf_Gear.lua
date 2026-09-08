@@ -12,7 +12,7 @@ function user_job_setup()
 	state.Weapons:options('Aeneas','Aeolian','Savage','ProcWeapons','Evisceration','Throwing','SwordThrowing','Bow')
 
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None','Suppa','DWMax','Parry'}
-	state.AmbushMode = M(false, 'Ambush Mode')
+	--state.AmbushMode = M(false, 'Ambush Mode')
 
 	gear.da_jse_back = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
 	gear.wsd_jse_back = {name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Weapon skill damage +10%',}}
@@ -28,8 +28,8 @@ function user_job_setup()
 	send_command('bind !backspace input /ja "Hide" <me>')
 	send_command('bind ^r gs c weapons Default;gs c set WeaponSkillMode match') --Requips weapons and gear.
 	send_command('bind !r gs c weapons MagicWeapons')
-	send_command('bind ^\\\\ input /ja "Despoil" <t>')
-	send_command('bind !\\\\ input /ja "Mug" <t>')
+	--send_command('bind ^\\\\ input /ja "Despoil" <t>')
+	--send_command('bind !\\\\ input /ja "Mug" <t>')
 
     select_default_macro_book()
 end
@@ -54,7 +54,8 @@ function init_gear_sets()
 	sets.Suppa = {ear1="Suppanomimi", ear2="Sherida Earring"}
 	sets.DWEarrings = {ear1="Dudgeon Earring",ear2="Heartseeker Earring"}
 	sets.DWMax = {ear1="Dudgeon Earring",ear2="Heartseeker Earring",body="Adhemar Jacket +1",hands="Floral Gauntlets",waist="Reiki Yotai"}
-	sets.Parry = {hands="Turms Mittens +1"file:///home/deck/Games/final-fantasy-xi-online/drive_c/Windower4/addons/Gearswap/data/Darkonyx/Darkonyx_Blu_Gear.lua,ring1="Defending Ring"}
+	sets.Parry = {hands="Turms Mittens +1",
+        ring1="Defending Ring"}
 	sets.Ambush = {} --body="Plunderer's Vest +1"
 	
 	-- Weapons sets
@@ -346,27 +347,4 @@ function select_default_macro_book()
         set_macro_page(6, 5)
     end
 end
-
-function user_job_lockstyle()
-	if player.equipment.main == nil or player.equipment.main == 'empty' then
-		windower.chat.input('/lockstyleset 001')
-	elseif res.items[item_name_to_id(player.equipment.main)].skill == 3 then --Sword in main hand.
-		if player.equipment.sub == nil or player.equipment.sub == 'empty' then --Sword/Nothing.
-				windower.chat.input('/lockstyleset 007')
-		elseif res.items[item_name_to_id(player.equipment.sub)].skill == 2 then --Sword/Dagger.
-			windower.chat.input('/lockstyleset 007')
-		else
-			windower.chat.input('/lockstyleset 007') --Catchall just in case something's weird.
-		end
-	elseif res.items[item_name_to_id(player.equipment.main)].skill == 2 then --Dagger in main hand.
-		if player.equipment.sub == nil or player.equipment.sub == 'empty' then --Dagger/Nothing.
-			windower.chat.input('/lockstyleset 008')
-		elseif res.items[item_name_to_id(player.equipment.sub)].skill == 2 then --Dagger/Dagger.
-			windower.chat.input('/lockstyleset 008')
-		else
-			windower.chat.input('/lockstyleset 008') --Catchall just in case something's weird.
-		end
-	end
-end
-
 autows_list = {['Aeneas']="Rudra's Storm",['Aeolian']='Aeolian Edge',['Savage']='Savage Blade',['Throwing']="Rudra's Storm",['SwordThrowing']='Savage Blade',['Evisceration']='Evisceration',['ProcWeapons']='Wasp Sting',['Bow']='Empyreal Arrow'}
